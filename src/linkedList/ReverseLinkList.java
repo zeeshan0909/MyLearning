@@ -35,6 +35,21 @@ class Reverse{
 		 }
 		 return head;
 	}
+	//using stack 
+	 Node reverseList(Node head) {
+		 Stack<Integer> s = new Stack<>();
+		 Node curr = head;
+		 while(curr != null){
+			 s.push(curr.data);
+			 curr = curr.next;
+		 }
+		 curr = head;
+		 while(curr != null){
+			 curr.data = s.pop();
+			 curr = curr.next;
+		 }
+		 return head;
+	 }
 }
 
 public class ReverseLinkList {
